@@ -30,7 +30,7 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = ({ user }) => {
           <Navigation />
         </div>
 
-        <div className="flex-1 flex items-center justify-end text-slate-700 dark:text-slate-100">
+        <div className="flex-1  flex items-center justify-end text-slate-700 dark:text-slate-100">
           <AvatarDropdown user={user} />
         </div>
       </div>

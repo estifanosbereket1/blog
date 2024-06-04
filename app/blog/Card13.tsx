@@ -44,7 +44,11 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
           May 20, 2021 · 2 min read
         </span> */}
         <div className="mt-auto hidden sm:block">
-          <PostCardMeta createdAt={post.createdAt} name={post.user.name} />
+          <PostCardMeta
+            createdAt={post.createdAt}
+            name={post.user.name}
+            userImage={post.user.image}
+          />
         </div>
       </div>
       <Link

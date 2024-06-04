@@ -3,14 +3,16 @@ import { NextResponse } from "next/server";
 
 export const GET = async (request: Request) => {
   try {
-    const allPost = await prisma.post.findMany({
+    const popularPosts = await prisma.post.findMany({
       include: {
         user: true,
       },
-      take: 5,
-      skip: 1,
+      orderBy: {
+        views: "desc",
+      },
+      take: 6,
     });
-    return NextResponse.json(allPost);
+    return NextResponse.json(popularPosts);
   } catch (error) {
     return NextResponse.error();
   }

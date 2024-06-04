@@ -44,7 +44,7 @@ export const GET = async (request: Request) => {
   // Default to page 1 if not provided
   // console.log(searchParams, "xxxxxxxxxxxxxxxxxxx");
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 4;
 
   const query = {
     skip: (page - 1) * POST_PER_PAGE,

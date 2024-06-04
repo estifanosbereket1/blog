@@ -7,6 +7,7 @@ import Footer from "@/shared/Footer/Footer";
 import HeaderLogged from "@/components/Header/HeaderLogged";
 import { ThemeProvider } from "next-themes";
 import ToastProvider from "@/providers/ToastProvider";
+import Footer1 from "@/comp/Footer1";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
           <HeaderLogged />
         </ThemeProvider>
         {children}
+        <Footer1 />
       </body>
     </html>
   );

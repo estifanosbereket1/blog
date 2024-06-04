@@ -5,16 +5,18 @@ import Link from "next/link";
 
 export interface PostCardMetaProps {
   className?: string;
-  hiddenAvatar?: boolean;
+
   createdAt: any;
   name: string;
+  userImage?: string;
 }
 
 const PostCardMeta: FC<PostCardMetaProps> = ({
   className = "leading-none",
-  hiddenAvatar = false,
+
   createdAt,
   name,
+  userImage,
 }) => {
   // const created = createdAt.toString().slice(0, 10);
   return (
@@ -26,8 +28,12 @@ const PostCardMeta: FC<PostCardMetaProps> = ({
         href={"/blog"}
         className="flex-shrink-0 relative flex items-center space-x-2"
       >
-        {!hiddenAvatar && (
-          <Avatar radius="rounded-full" sizeClass={"h-7 w-7 text-sm"} />
+        {userImage && (
+          <Avatar
+            imgSrc={userImage}
+            radius="rounded-full"
+            sizeClass={"h-7 w-7 text-sm"}
+          />
         )}
         <span className="block text-neutral-6000 hover:text-black dark:text-neutral-300 dark:hover:text-white font-medium">
           {name || _getPersonNameRd()}

@@ -32,8 +32,8 @@ const WidgetCategories: React.FC<WidgetCategoriesProps> = async ({
       data-nc-id="WidgetCategories"
     >
       <WidgetHeading1
-        title="✨ Trending topic"
-        viewAll={{ label: "View all", href: "/#" }}
+        title="✨ Categories"
+        viewAll={{ label: "View all", href: "/" }}
       />
       <div className="flow-root">
         <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-700">

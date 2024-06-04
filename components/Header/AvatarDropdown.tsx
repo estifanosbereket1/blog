@@ -29,7 +29,7 @@ const AvatarDropdown: React.FC<AvatarDropDownProps> = ({ user }) => {
               {user?.image ? (
                 <Image
                   src={user.image}
-                  className="w-6 h-6"
+                  className="w-6 h-6 rounded-full"
                   alt="userImage"
                   width={24}
                   height={24}
