@@ -9,7 +9,7 @@ import { getCurrentUser } from "@/actions/getUser";
 //   postCardName?: "card3";
 // }
 
-const page = async ({ postCardName = "card3", className = "" }) => {
+const page = async () => {
   //   const posts = await fetchPosts();
 
   try {
