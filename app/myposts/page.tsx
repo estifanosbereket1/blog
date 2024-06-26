@@ -12,11 +12,6 @@ import { getCurrentUser } from "@/actions/getUser";
 const page = async () => {
   //   const posts = await fetchPosts();
 
-  try {
-    const response = await axios.get("http://localhost:3000/api/myposts");
-    console.log(response.data);
-  } catch (error) {}
-
   // const posts = response.data;
 
   return (
