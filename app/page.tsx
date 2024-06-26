@@ -10,7 +10,7 @@ const BlogPage = async ({
 }: {
   searchParams: { page?: string };
 }) => {
-  const page = parseInt(searchParams.page || "1", 10);
+  const page = parseInt(searchParams.page || "1");
 
   return (
     <div className="nc-BlogPage overflow-hidden relative">
