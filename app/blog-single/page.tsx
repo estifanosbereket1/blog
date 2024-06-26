@@ -12,7 +12,21 @@ import Tag from "@/shared/Tag/Tag";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogSingle = () => {
+import { cookies } from "next/headers";
+
+async function getCookieData() {
+  const cookieData = cookies().getAll();
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(cookieData);
+    }, 1000)
+  );
+}
+
+export const dynamic = "force-dynamic";
+
+const BlogSingle = async () => {
+  const cookies = await getCookieData();
   const renderHeader = () => {
     return (
       <header className="container rounded-xl">

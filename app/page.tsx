@@ -5,6 +5,8 @@ import SectionAds from "./blog/SectionAds";
 import SectionMagazine5 from "./blog/SectionMagazine5";
 import SectionLatestPosts from "./blog/SectionLatestPosts";
 
+export const dynamic = "force-dynamic";
+
 const BlogPage = async ({
   searchParams,
 }: {

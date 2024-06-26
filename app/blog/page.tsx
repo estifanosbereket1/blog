@@ -7,6 +7,7 @@ import SectionPromo3 from "@/components/SectionPromo3";
 import axios from "axios";
 
 // DEMO DATA
+export const dynamic = "force-dynamic";
 
 const BlogPage = async ({ searchParams }: { searchParams: string }) => {
   const page = parseInt(searchParams) || 1;

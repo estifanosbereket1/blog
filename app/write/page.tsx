@@ -442,6 +442,7 @@ import WriteWrapper from "@/comp/WriteWrapper";
 
 // export default Page;
 
+export const dynamic = "force-dynamic";
 const page = async () => {
   const user = await getCurrentUser();
   return (

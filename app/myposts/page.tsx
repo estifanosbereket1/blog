@@ -9,10 +9,24 @@ import { getCurrentUser } from "@/actions/getUser";
 //   postCardName?: "card3";
 // }
 
+import { cookies } from "next/headers";
+
+async function getCookieData() {
+  const cookieData = cookies().getAll();
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(cookieData);
+    }, 1000)
+  );
+}
+
+export const dynamic = "force-dynamic";
+
 const page = async () => {
   //   const posts = await fetchPosts();
 
   // const posts = response.data;
+  const cookie = await getCookieData();
 
   return (
     // <div className={`nc-SectionLatestPosts relative ${className}`}>
