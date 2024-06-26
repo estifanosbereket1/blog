@@ -28,6 +28,7 @@ const CardCategory1: FC<CardCategory1Props> = ({
     <div>
       {data.map((item: Category) => (
         <Link
+          key={item.id}
           href={`/blogcat?cat=${item.slug}`}
           className={`nc-CardCategory1 flex items-center ${className}`}
         >
