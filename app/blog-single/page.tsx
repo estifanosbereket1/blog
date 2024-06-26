@@ -214,7 +214,7 @@ const BlogSingle = () => {
           Responses (14)
         </h3>
         <form className="nc-SingleCommentForm mt-5">
-          <Textarea />
+          {/* <Textarea id="comment" register={} /> */}
           <div className="mt-2 space-x-3">
             <ButtonPrimary>Submit</ButtonPrimary>
             <ButtonSecondary>Cancel</ButtonSecondary>

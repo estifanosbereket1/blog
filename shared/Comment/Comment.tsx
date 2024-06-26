@@ -5,7 +5,7 @@ import Avatar from "@/shared/Avatar/Avatar";
 
 export interface CommentProps {
   isSmall?: boolean;
-  data: any;
+  data?: any;
 }
 
 const Comment: FC<CommentProps> = async ({ isSmall, data }) => {

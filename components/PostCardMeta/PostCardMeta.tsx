@@ -6,8 +6,8 @@ import Link from "next/link";
 export interface PostCardMetaProps {
   className?: string;
 
-  createdAt: any;
-  name: string;
+  createdAt?: any;
+  name?: string;
   userImage?: string;
 }
 

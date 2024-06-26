@@ -11,7 +11,7 @@ export interface CardCategory1Props {
   featuredImage?: string | StaticImageData;
   name?: string;
   desc?: string;
-  data: Category[];
+  data?: Category[];
 }
 
 const CardCategory1: FC<CardCategory1Props> = ({
@@ -26,7 +26,7 @@ const CardCategory1: FC<CardCategory1Props> = ({
 
   return (
     <div>
-      {data.map((item: Category) => (
+      {data?.map((item: Category) => (
         <div key={item.id}>
           <Link
             href={`/blogcat?cat=${item.slug}`}

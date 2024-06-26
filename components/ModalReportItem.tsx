@@ -7,15 +7,15 @@ import ButtonSecondary from "@/shared/Button/ButtonSecondary";
 import NcModal from "@/shared/NcModal/NcModal";
 
 export interface ProblemPlan {
-  name: string;
-  id: string;
-  label: string;
+  name?: string;
+  id?: string;
+  label?: string;
 }
 
 export interface ModalReportItemProps {
-  show: boolean;
+  show?: boolean;
   problemPlans?: ProblemPlan[];
-  onCloseModalReportItem: () => void;
+  onCloseModalReportItem?: () => void;
 }
 
 const problemPlansDemo = [
@@ -118,14 +118,15 @@ const ModalReportItem: FC<ModalReportItemProps> = ({
             Please provide any additional information or context that will help
             us understand and handle the situation.
           </span>
-          <Textarea
+          {/* <Textarea
             placeholder="..."
             className="mt-3"
-            ref={textareaRef}
+            // ref={textareaRef}
+            register={}
             required={true}
             rows={4}
             id="report-message"
-          />
+          /> */}
         </div>
         <div className="mt-4 space-x-3">
           <ButtonPrimary onClick={handleClickSubmitForm} type="submit">
