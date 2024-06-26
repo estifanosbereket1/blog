@@ -9,10 +9,7 @@ interface SectionLatestPostsProps {
   postCardName?: "card3";
 }
 
-const page = async ({
-  postCardName = "card3",
-  className = "",
-}: SectionLatestPostsProps) => {
+const page = async ({ postCardName = "card3", className = "" }) => {
   //   const posts = await fetchPosts();
 
   try {
