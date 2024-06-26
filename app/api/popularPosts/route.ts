@@ -14,6 +14,12 @@ export const GET = async (request: Request) => {
     });
     return NextResponse.json(popularPosts);
   } catch (error) {
-    return error;
+    console.error(error);
+
+    // Return a JSON response with the error message and a status code
+    return NextResponse.json(
+      { error: "Failed to fetch popular posts" },
+      { status: 500 }
+    );
   }
 };
