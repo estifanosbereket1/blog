@@ -24,6 +24,7 @@ model User {
   posts         Post[]
   comments      Comment[]
   accounts      Account[]
+    sessions      Session[]
 }
 
 model Category {
@@ -58,20 +59,57 @@ model Comment {
   user      User      @relation(fields: [userEmail], references: [email])
 }
 
+  // id                 String  @id  @map("_id") @default(cuid())
+// model Account {
+//   id                 String  @id  @map("_id") @default(cuid())
+//   userId             String
+//   type               String
+//   provider           String
+//   providerAccountId  String
+//   refresh_token      String?
+//   access_token       String?
+//   expires_at         Int?
+//   token_type         String?
+//   scope              String?
+//   id_token           String?
+//   session_state      String?
+
+//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+//   @@unique([provider, providerAccountId])
+// }
+
 model Account {
-  id                 String  @id  @map("_id") @default(cuid())
+  id                 String  @id @default(cuid()) @map("_id")
   userId             String
   type               String
   provider           String
   providerAccountId  String
-  refresh_token      String?
-  access_token       String?
+  refresh_token      String?  
+  access_token       String?  
   expires_at         Int?
   token_type         String?
   scope              String?
-  id_token           String?
+  id_token           String?  
   session_state      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid()) @map("_id")
+  sessionToken String   @unique
+  access_token       String?  @db.String
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String @id @map("_id")
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
 }

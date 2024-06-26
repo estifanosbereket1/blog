@@ -107,6 +107,21 @@ const AvatarDropdown: React.FC<AvatarDropDownProps> = ({ user }) => {
                       <SwitchDarkMode2 />
                     </div>
 
+                    {user && (
+                      <div className="flex items-center justify-between p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
+                        <div className="flex items-center">
+                          <div className="ml-4">
+                            <Link
+                              className="text-sm font-medium "
+                              href="/myposts"
+                            >
+                              My Posts
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
                     {/* ------------------ 2 --------------------- */}
                     <Link
                       href={"/#"}
