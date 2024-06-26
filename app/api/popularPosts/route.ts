@@ -14,6 +14,6 @@ export const GET = async (request: Request) => {
     });
     return NextResponse.json(popularPosts);
   } catch (error) {
-    return NextResponse.error();
+    return error;
   }
 };

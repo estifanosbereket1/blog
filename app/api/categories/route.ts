@@ -6,6 +6,6 @@ export const GET = async () => {
     const categories = await prisma.category.findMany();
     return NextResponse.json(categories);
   } catch (error) {
-    return NextResponse.error();
+    return error;
   }
 };
