@@ -23,26 +23,20 @@ const Logo: React.FC<LogoProps> = ({
       {/* THIS USE FOR MY CLIENT */}
       {/* PLEASE UN COMMENT BELLOW CODE AND USE IT */}
       {img ? (
-        <Image
-          className={`block h-8 sm:h-10 w-auto ${
+        <p
+          className={`block h-8 sm:h-10 w-auto font-bold text-xl text-black ${
             imgLight ? "dark:hidden" : ""
           }`}
-          src={img}
-          alt="Logo"
-          sizes="200px"
-          priority
-        />
+        >
+          EchoBlogs
+        </p>
       ) : (
         "Logo Here"
       )}
       {imgLight && (
-        <Image
-          className="hidden h-8 sm:h-10 w-auto dark:block"
-          src={imgLight}
-          alt="Logo-Light"
-          sizes="200px"
-          priority
-        />
+        <p className="hidden h-8 sm:h-10 w-auto font-bold text-xl text-white dark:block">
+          EchoBlogs
+        </p>
       )}
     </Link>
   );
