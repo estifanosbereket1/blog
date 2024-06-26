@@ -4,10 +4,10 @@ import Heading from "@/components/Heading/Heading";
 import Card3 from "../blog/Card3";
 import { getCurrentUser } from "@/actions/getUser";
 
-interface SectionLatestPostsProps {
-  className?: string;
-  postCardName?: "card3";
-}
+// interface SectionLatestPostsProps {
+//   className?: string;
+//   postCardName?: "card3";
+// }
 
 const page = async ({ postCardName = "card3", className = "" }) => {
   //   const posts = await fetchPosts();
