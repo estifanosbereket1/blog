@@ -7,11 +7,7 @@ import SectionLatestPosts from "./blog/SectionLatestPosts";
 
 export const dynamic = "force-dynamic";
 
-const BlogPage = async ({
-  searchParams,
-}: {
-  searchParams: { page?: string };
-}) => {
+const page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   const page = parseInt(searchParams.page || "1");
 
   return (
@@ -38,4 +34,4 @@ const BlogPage = async ({
   );
 };
 
-export default BlogPage;
+export default page;
