@@ -8,6 +8,7 @@ import HeaderLogged from "@/components/Header/HeaderLogged";
 import { ThemeProvider } from "next-themes";
 import ToastProvider from "@/providers/ToastProvider";
 import Footer1 from "@/comp/Footer1";
+export const dynamic = "force-dynamic";
 
 const poppins = Poppins({
   subsets: ["latin"],
