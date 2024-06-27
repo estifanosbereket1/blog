@@ -13,16 +13,32 @@ interface SectionLatestPostsProps {
   cat?: string;
 }
 
+// const fetchPosts = async (page: number, cat: string) => {
+//   try {
+//     const response = await axios.get(
+//       `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`
+//     );
+//     // console.log(response.data);
+
+//     return response.data;
+//   } catch (error) {
+//     console.error("Failed to fetch posts:", error);
+//     throw new Error("Failed to fetch posts");
+//   }
+// };
+
 const fetchPosts = async (page: number, cat: string) => {
   try {
     const response = await axios.get(
-      `/api/posts?page=${page}&cat=${cat || ""}`
+      `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`
     );
-    // console.log(response.data);
-
     return response.data;
   } catch (error) {
-    console.error("Failed to fetch posts:", error);
+    if (axios.isAxiosError(error)) {
+      console.error("Axios error:", error.response?.data || error.message);
+    } else {
+      console.error("Unexpected error:", error);
+    }
     throw new Error("Failed to fetch posts");
   }
 };
@@ -34,6 +50,10 @@ const SectionLatestPosts = async ({
   cat = "",
 }: SectionLatestPostsProps) => {
   const POST_PER_PAGE = 2;
+  console.log(
+    page,
+    "paggggggggggggggggggggggggggggggggggggggggggggggggggggggggggyyyyyyyyyy"
+  );
   const { posts, count } = await fetchPosts(page, cat);
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;

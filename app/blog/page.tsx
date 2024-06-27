@@ -13,7 +13,7 @@ const BlogPage = async ({ searchParams }: { searchParams: string }) => {
   const page = parseInt(searchParams) || 1;
   let posts = [];
   try {
-    const post = await axios.get("/api/posts");
+    const post = await axios.get("http://localhost:3000/api/posts");
     posts = post.data;
   } catch (error) {
     console.error("Failed to fetch categories", error);

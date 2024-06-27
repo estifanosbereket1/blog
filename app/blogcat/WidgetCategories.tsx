@@ -19,7 +19,7 @@ const WidgetCategories: React.FC<WidgetCategoriesProps> = async ({
   let categories = [];
 
   try {
-    const response = await axios.get("/api/categories");
+    const response = await axios.get("http://localhost:3000/api/categories");
     categories = response.data;
     console.log(categories);
   } catch (error) {

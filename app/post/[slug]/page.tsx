@@ -27,7 +27,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
   const user = await getCurrentUser();
 
   try {
-    const post = await axios.get(`/api/posts/${slug}`);
+    const post = await axios.get(`http://localhost:3000/api/posts/${slug}`);
     singlePost = post.data;
     console.log(post.data, "jjjjjjjjjjjjjjjjjjjjjjjjj");
   } catch (error) {
@@ -147,7 +147,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
     return (
       <div className="max-w-screen-md mx-auto">
         <ul className="nc-SingleCommentLists space-y-5">
-          {comments.map((item: any) => (
+          {comments?.map((item: any) => (
             <li key={item._id}>
               <Comment data={item} />
             </li>

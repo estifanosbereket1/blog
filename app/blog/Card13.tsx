@@ -36,8 +36,11 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
         </h2>
         <span className="hidden sm:block my-3 text-slate-500 dark:text-slate-400 ">
           <span className="line-clamp-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            dolorem voluptatibus numquam ut pariatur officiis?
+            <div
+              id="single-entry-content"
+              className="prose prose-sm !max-w-screen-md sm:prose lg:prose-lg mx-auto dark:prose-invert"
+              dangerouslySetInnerHTML={{ __html: post.description }}
+            />
           </span>
         </span>
         {/* <span className="mt-4 block sm:hidden text-sm text-slate-500 ">
