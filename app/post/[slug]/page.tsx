@@ -27,7 +27,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
   const user = await getCurrentUser();
 
   try {
-    const post = await axios.get(`http://localhost:3000/api/posts/${slug}`);
+    const post = await axios.get(`/api/posts/${slug}`);
     singlePost = post.data;
     console.log(post.data, "jjjjjjjjjjjjjjjjjjjjjjjjj");
   } catch (error) {
