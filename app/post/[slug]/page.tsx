@@ -35,7 +35,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
   }
 
   try {
-    const comm = await axios.get("http://localhost:3000/api/comments");
+    const comm = await axios.get("/api/comments");
     comments = comm.data;
   } catch (error) {
     console.error("Failed to fetch categories", error);

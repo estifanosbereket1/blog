@@ -6,7 +6,7 @@ import axios from "axios";
 export interface SectionMagazine5Props {}
 
 const SectionMagazine5: FC<SectionMagazine5Props> = async () => {
-  const postSingle = await axios.get("http://localhost:3000/api/allPost");
+  const postSingle = await axios.get("/api/allPost");
   const post1 = postSingle.data[0];
 
   // console.log(postSingle.data, "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");

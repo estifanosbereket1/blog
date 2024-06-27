@@ -16,7 +16,7 @@ interface SectionLatestPostsProps {
 const fetchPosts = async (page: number, cat: string) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`
+      `/api/posts?page=${page}&cat=${cat || ""}`
     );
     // console.log(response.data);
 
