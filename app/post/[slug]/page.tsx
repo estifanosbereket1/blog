@@ -30,17 +30,16 @@ const BlogSingle = async ({ params }: { params: Params }) => {
   try {
     const post = await axios.get(`${NEXT_ROUTE}/api/posts/${slug}`);
     singlePost = post.data;
-    console.log(post.data, "jjjjjjjjjjjjjjjjjjjjjjjjj");
   } catch (error) {
     console.error("Failed to fetch categories", error);
   }
 
-  try {
-    const comm = await axios.get(`${NEXT_ROUTE}/api/comments`);
-    comments = comm.data;
-  } catch (error) {
-    console.error("Failed to fetch categories", error);
-  }
+  // try {
+  //   const comm = await axios.get(`${NEXT_ROUTE}/api/comments`);
+  //   comments = comm.data;
+  // } catch (error) {
+  //   console.error("Failed to fetch categories", error);
+  // }
 
   const renderHeader = async () => {
     return (
@@ -53,11 +52,11 @@ const BlogSingle = async ({ params }: { params: Params }) => {
           >
             {singlePost?.title}
           </h1>
-          <span className="block text-base text-neutral-500 md:text-lg dark:text-neutral-400 pb-1">
+          {/* <span className="block text-base text-neutral-500 md:text-lg dark:text-neutral-400 pb-1">
             We’re an online magazine dedicated to covering the best in
             international product design. We started as a little blog back in
             2002 covering student work and over time
-          </span>
+          </span> */}
 
           <div className="w-full border-b border-neutral-100 dark:border-neutral-800"></div>
           <div className="flex flex-col items-center sm:flex-row sm:justify-between">
@@ -122,7 +121,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
           <Avatar sizeClass="w-11 h-11 md:w-24 md:h-24" />
           <div className="flex flex-col ml-3 max-w-lg sm:ml-5 space-y-1">
             <span className="text-xs text-neutral-400 uppercase tracking-wider">
-              WRITEN BY
+              WRITTEN BY
             </span>
             <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-200">
               <div>{singlePost.user.name}</div>
@@ -148,7 +147,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
     return (
       <div className="max-w-screen-md mx-auto">
         <ul className="nc-SingleCommentLists space-y-5">
-          {comments?.map((item: any) => (
+          {singlePost.comments?.map((item: any) => (
             <li key={item._id}>
               <Comment data={item} />
             </li>
@@ -210,7 +209,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
 
       <div className="nc-SingleContent container space-y-10">
         {renderContent()}
-        {renderTags()}
+        {/* {renderTags()} */}
         <div className="max-w-screen-md mx-auto border-b border-t border-neutral-100 dark:border-neutral-700"></div>
         {renderAuthor()}
         {renderCommentForm()}
@@ -221,7 +220,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
           <h2 className="text-3xl font-semibold">Related posts</h2>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {/*  */}
-            {[1, 1, 1, 1].filter((_, i) => i < 4).map(renderPostRelated)}
+            {/* {[1, 1, 1, 1].filter((_, i) => i < 4).map(renderPostRelated)} */}
             {/*  */}
           </div>
         </div>

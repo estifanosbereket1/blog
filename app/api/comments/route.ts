@@ -4,8 +4,11 @@ import { connect } from "http2";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { NextResponse } from "next/server";
 
+// { params }: { params: Params }
+
 export const GET = async (request: Request, { params }: { params: Params }) => {
   const { searchParams } = new URL(request.url);
+
   const postSlug = searchParams.get("postSlug");
 
   try {

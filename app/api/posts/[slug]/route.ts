@@ -13,9 +13,10 @@ export const GET = async (request: Request, { params }: { params: Params }) => {
       data: { views: { increment: 1 } },
       include: {
         user: true,
+        comments: true,
       },
     });
-    // console.log(post, "single posttttttttttttt");
+    console.log(post, "single posttttttttttttt");
     return NextResponse.json(post);
   } catch (error) {
     // console.error("Error fetching posts:", error);
