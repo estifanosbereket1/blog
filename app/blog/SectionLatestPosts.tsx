@@ -60,7 +60,7 @@ const SectionLatestPosts = async ({
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
-  if (!posts) {
+  if (!NEXT_ROUTE) {
     return null;
   }
 
