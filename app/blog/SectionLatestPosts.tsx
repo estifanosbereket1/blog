@@ -60,6 +60,10 @@ const SectionLatestPosts = async ({
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
+  if (!posts) {
+    return null;
+  }
+
   return (
     <div className={`nc-SectionLatestPosts relative ${className}`}>
       <div className="flex flex-col lg:flex-row">
