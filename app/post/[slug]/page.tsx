@@ -16,6 +16,7 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import CommentSec from "../CommentSec";
 import { getCurrentUser } from "@/actions/getUser";
 import { Post } from "@prisma/client";
+import { NEXT_ROUTE } from "@/utils/constants";
 
 const BlogSingle = async ({ params }: { params: Params }) => {
   const { slug } = params;
@@ -27,7 +28,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
   const user = await getCurrentUser();
 
   try {
-    const post = await axios.get(`http://localhost:3000/api/posts/${slug}`);
+    const post = await axios.get(`${NEXT_ROUTE}/api/posts/${slug}`);
     singlePost = post.data;
     console.log(post.data, "jjjjjjjjjjjjjjjjjjjjjjjjj");
   } catch (error) {
@@ -35,7 +36,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
   }
 
   try {
-    const comm = await axios.get("/api/comments");
+    const comm = await axios.get(`${NEXT_ROUTE}/api/comments`);
     comments = comm.data;
   } catch (error) {
     console.error("Failed to fetch categories", error);

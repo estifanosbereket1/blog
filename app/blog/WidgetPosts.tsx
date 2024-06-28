@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Card3Small from "./Card3Small";
 import WidgetHeading1 from "./WidgetHeading1";
 import axios from "axios";
+import { NEXT_ROUTE } from "@/utils/constants";
 
 export interface WidgetPostsProps {
   className?: string;
@@ -10,7 +11,7 @@ export interface WidgetPostsProps {
 const WidgetPosts: FC<WidgetPostsProps> = async ({
   className = "bg-neutral-100 dark:bg-neutral-800",
 }) => {
-  const popularPots = await axios.get("http://localhost:3000/api/popularPosts");
+  const popularPots = await axios.get(`${NEXT_ROUTE}/api/popularPosts`);
   const posts = popularPots.data;
 
   return (

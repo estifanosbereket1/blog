@@ -5,6 +5,7 @@ import WidgetCategories from "./WidgetCategories";
 import WidgetPosts from "./WidgetPosts";
 import Card3 from "./Card3";
 import Pag from "@/comp/Pag";
+import { NEXT_ROUTE } from "@/utils/constants";
 
 interface SectionLatestPostsProps {
   className?: string;
@@ -30,7 +31,7 @@ interface SectionLatestPostsProps {
 const fetchPosts = async (page: number, cat: string) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`
+      `${NEXT_ROUTE}/api/posts?page=${page}&cat=${cat || ""}`
     );
     return response.data;
   } catch (error) {

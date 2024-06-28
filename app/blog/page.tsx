@@ -5,6 +5,7 @@ import SectionLatestPosts from "./SectionLatestPosts";
 import BgGlassmorphism from "@/components/BgGlassmorphism/BgGlassmorphism";
 import SectionPromo3 from "@/components/SectionPromo3";
 import axios from "axios";
+import { NEXT_ROUTE } from "@/utils/constants";
 
 // DEMO DATA
 export const dynamic = "force-dynamic";
@@ -13,7 +14,7 @@ const BlogPage = async ({ searchParams }: { searchParams: string }) => {
   const page = parseInt(searchParams) || 1;
   let posts = [];
   try {
-    const post = await axios.get("http://localhost:3000/api/posts");
+    const post = await axios.get(`${NEXT_ROUTE}/api/posts`);
     posts = post.data;
   } catch (error) {
     console.error("Failed to fetch categories", error);

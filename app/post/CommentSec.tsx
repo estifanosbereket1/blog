@@ -37,7 +37,7 @@ const CommentSec: React.FC<CommentSecProps> = ({ user, slug }) => {
     try {
       // Include the slug in the data object
       const requestData = { ...data, slug };
-      await axios.post("http://localhost:3000/api/comments", requestData);
+      await axios.post("/api/comments", requestData);
       toast.success("Commented Successfully");
       router.refresh();
     } catch (error) {

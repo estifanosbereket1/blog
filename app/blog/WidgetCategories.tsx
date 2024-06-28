@@ -2,6 +2,7 @@ import CardCategory1 from "@/components/CardCategories/CardCategory1";
 import React from "react";
 import WidgetHeading1 from "./WidgetHeading1";
 import axios from "axios";
+import { NEXT_ROUTE } from "@/utils/constants";
 
 export interface WidgetCategoriesProps {
   className?: string;
@@ -19,7 +20,7 @@ const WidgetCategories: React.FC<WidgetCategoriesProps> = async ({
   let categories = [];
 
   try {
-    const response = await axios.get("http://localhost:3000/api/categories");
+    const response = await axios.get(`${NEXT_ROUTE}/api/categories`);
     categories = response.data;
     // console.log(categories);
   } catch (error) {
