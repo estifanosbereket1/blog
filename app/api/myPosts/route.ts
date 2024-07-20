@@ -22,3 +22,17 @@ export const GET = async (request: Request) => {
     return NextResponse.error();
   }
 };
+
+export const DELETE = async (request: Request) => {
+  const id = request.headers.get("id");
+  console.log(id);
+  try {
+    await prisma.post.delete({
+      where: { id: id as string },
+    });
+    return new NextResponse("Post deleted successfully", { status: 200 });
+  } catch (error) {
+    console.error("Error deleting post:", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
+  }
+};

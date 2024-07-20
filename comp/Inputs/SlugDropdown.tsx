@@ -10,6 +10,22 @@ const catArray = [
     icon: <MdCardTravel className="inline-block mr-2" />,
   },
   {
+    label: "Psychology",
+    icon: <MdCardTravel className="inline-block mr-2" />,
+  },
+  {
+    label: "Sports",
+    icon: <MdCardTravel className="inline-block mr-2" />,
+  },
+  {
+    label: "nature",
+    icon: <MdCardTravel className="inline-block mr-2" />,
+  },
+  {
+    label: "Entertainment",
+    icon: <MdCardTravel className="inline-block mr-2" />,
+  },
+  {
     label: "Food",
     icon: <MdOutlineFastfood className="inline-block mr-2" />,
   },
@@ -49,7 +65,7 @@ const SlugDropdown: React.FC<SlugDropDownInterface> = ({
         className="block w-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
         {...register(id, { required })}
       >
-        <option value="" disabled selected>
+        <option value="" disabled>
           {name}
         </option>
         {catArray.map((item) => (

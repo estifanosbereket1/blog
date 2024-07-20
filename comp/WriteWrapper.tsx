@@ -135,18 +135,20 @@ const WriteWrapper: React.FC<WriteWrapperProp> = ({ user }) => {
       </div>
       {typeof window !== "undefined" && (
         <ReactQuill
-          className="w-full my-11"
+          className="w-full my-11 "
           theme="bubble"
           value={description}
           onChange={(value) => setCustomValue("description", value)}
           placeholder="Place your post here"
         />
       )}
-      <ButtonWrapper
-        onSubmit={handleSubmit(onSubmit)}
-        ActionLabel="Publish"
-        disabled={isPosting}
-      />
+      <div className="my-5">
+        <ButtonWrapper
+          onSubmit={handleSubmit(onSubmit)}
+          ActionLabel="Publish"
+          disabled={isPosting}
+        />
+      </div>
     </div>
   );
 };

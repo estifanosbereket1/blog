@@ -22,7 +22,7 @@ const InputTitle: React.FC<InputTitleProps> = ({
         id={id}
         {...register(id, { required })}
         placeholder="Title"
-        className="p-8 m-6 placeholder:text-gray-300 text-3xl border-none focus:ring-0 outline-none bg-transparent focus:outline-none"
+        className="p-8 m-6 placeholder:text-gray-300 text-3xl w-full border-none focus:ring-0 outline-none bg-transparent focus:outline-none"
       />
     </div>
   );

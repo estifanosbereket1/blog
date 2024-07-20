@@ -53,7 +53,7 @@ export default function Footer1() {
   return (
     <footer className="nc-Footer relative py-20 lg:pt-28 lg:pb-24 border-t border-neutral-200 dark:border-neutral-700 ">
       <div className="mx-auto max-w-7xl py-12 px-6 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="flex justify-center space-x-6 md:order-2">
+        <div className="flex justify-center space-x-6 md:order-2 mt-4">
           {navigation.map((item) => (
             <a
               key={item.name}
@@ -67,7 +67,7 @@ export default function Footer1() {
         </div>
         <div className="mt-8 md:order-1 md:mt-0">
           <p className="text-center text-xs leading-5 text-gray-500">
-            &copy; 2024 Your Company, Inc. All rights reserved.
+            &copy; 2024 EchoBlogs, Inc. All rights reserved.
           </p>
         </div>
       </div>
