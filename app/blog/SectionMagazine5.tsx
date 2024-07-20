@@ -10,16 +10,17 @@ const SectionMagazine5: FC<SectionMagazine5Props> = async () => {
   const postSingle = await axios.get(`${NEXT_ROUTE}/api/allPost`);
   const post1 = postSingle.data[0];
 
-  // console.log(postSingle.data, "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+  console.log(postSingle.data, "m");
 
   // console.log(postAll, "everypost");
+  const postAll = postSingle.data.slice(0, 4);
 
   return (
     <div className="nc-SectionMagazine5">
       <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
         <Card12 post={post1} />
         <div className="grid gap-6 md:gap-8">
-          {postSingle.data.map((item: any) => (
+          {postAll.map((item: any) => (
             <Card13 key={item._id} post={item} />
           ))}
         </div>

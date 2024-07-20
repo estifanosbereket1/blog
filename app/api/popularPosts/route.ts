@@ -12,7 +12,13 @@ export const GET = async (request: Request) => {
       },
       take: 6,
     });
-    return NextResponse.json(popularPosts);
+
+    const formattedPosts = popularPosts.map((post) => ({
+      ...post,
+      createdAt: post.createdAt.toISOString().slice(0, 10), // Convert Date object to ISO string
+    }));
+
+    return NextResponse.json(formattedPosts);
   } catch (error) {
     console.error(error);
 

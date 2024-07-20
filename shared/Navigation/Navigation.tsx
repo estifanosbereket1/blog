@@ -5,8 +5,7 @@ import { getCurrentUser } from "@/actions/getUser";
 
 const navigation = [
   { name: "Home", id: "Home", href: "/" },
-  { name: "About", id: "About", href: "/about" },
-  { name: "Contact", id: "Contact", href: "/contact" },
+
   { name: "Write", id: "Write", href: "/write" },
 ];
 

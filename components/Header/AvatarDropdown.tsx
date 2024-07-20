@@ -169,18 +169,26 @@ const AvatarDropdown: React.FC<AvatarDropDownProps> = ({ user }) => {
                           </div>
                         </div>
                       )}
-                      {!user && (
-                        <div className="flex gap-5 flex-col justify-center items-center">
-                          <Link className="text-sm font-medium" href="/signup">
+                    </Link>
+                    {!user && (
+                      <>
+                        <div className="flex gap-5 flex-col justify-center items-start -m-3">
+                          <Link
+                            className="text-sm  w-full py-2 font-medium transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                            href="/signup"
+                          >
                             Sign up
                           </Link>
 
-                          <Link className="text-sm font-medium" href="/login">
+                          <Link
+                            className="text-sm w-full  py-2 font-medium transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                            href="/login"
+                          >
                             Log in
                           </Link>
                         </div>
-                      )}
-                    </Link>
+                      </>
+                    )}
                   </div>
                 </div>
               </Popover.Panel>

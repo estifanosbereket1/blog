@@ -51,10 +51,7 @@ const SectionLatestPosts = async ({
   cat = "",
 }: SectionLatestPostsProps) => {
   const POST_PER_PAGE = 2;
-  console.log(
-    page,
-    "paggggggggggggggggggggggggggggggggggggggggggggggggggggggggggyyyyyyyyyy"
-  );
+
   const { posts, count } = await fetchPosts(page, cat);
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;

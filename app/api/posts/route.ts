@@ -1,15 +1,14 @@
+// import { getCurrentUser } from "@/actions/getUser";
 // import prisma from "@/utils/connection";
 // import { NextResponse } from "next/server";
 
 // export const GET = async (request: Request) => {
 //   const { searchParams } = new URL(request.url);
 
-//   console.log(searchParams, "serverparams");
-//   const page = Number(searchParams.get("page"));
+//   const page = Number(searchParams.get("page")) || 1;
+//   const cat = searchParams.get("cat");
 
-//   console.log(page, "serveer");
-
-//   const POST_PER_PAGE = 2;
+//   const POST_PER_PAGE = 4;
 
 //   const query = {
 //     skip: (page - 1) * POST_PER_PAGE,
@@ -17,12 +16,15 @@
 //     include: {
 //       user: true,
 //     },
+//     where: {
+//       ...(cat && { catSlug: cat }),
+//     },
 //   };
 
 //   try {
 //     const [posts, count] = await prisma.$transaction([
 //       prisma.post.findMany(query),
-//       prisma.post.count(),
+//       prisma.post.count({ where: query.where }),
 //     ]);
 
 //     return NextResponse.json({ posts, count });
@@ -41,8 +43,6 @@ export const GET = async (request: Request) => {
 
   const page = Number(searchParams.get("page")) || 1;
   const cat = searchParams.get("cat");
-  // Default to page 1 if not provided
-  // console.log(searchParams, "xxxxxxxxxxxxxxxxxxx");
 
   const POST_PER_PAGE = 4;
 
@@ -63,7 +63,13 @@ export const GET = async (request: Request) => {
       prisma.post.count({ where: query.where }),
     ]);
 
-    return NextResponse.json({ posts, count });
+    // Convert createdAt to string for each post
+    const formattedPosts = posts.map((post) => ({
+      ...post,
+      createdAt: post.createdAt.toISOString().slice(0, 10), // Convert Date object to ISO string
+    }));
+
+    return NextResponse.json({ posts: formattedPosts, count });
   } catch (error) {
     console.error("Error fetching posts:", error);
     return new NextResponse("Internal Server Error", { status: 500 });

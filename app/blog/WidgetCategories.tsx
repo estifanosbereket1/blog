@@ -34,7 +34,7 @@ const WidgetCategories: React.FC<WidgetCategoriesProps> = async ({
     >
       <WidgetHeading1
         title="✨ Categories"
-        viewAll={{ label: "View all", href: "/" }}
+        viewAll={{ label: "choose category", href: "/" }}
       />
       <div className="flow-root">
         <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-700">

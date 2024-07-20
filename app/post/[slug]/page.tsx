@@ -126,13 +126,13 @@ const BlogSingle = async ({ params }: { params: Params }) => {
             <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-200">
               <div>{singlePost.user.name}</div>
             </h2>
-            <span className="text-sm text-neutral-500 sm:text-base dark:text-neutral-300">
+            {/* <span className="text-sm text-neutral-500 sm:text-base dark:text-neutral-300">
               There’s no stopping the tech giant. Apple now opens its 100th
               store in China.There’s no stopping the tech giant.
               <a className="text-primary-6000 font-medium ml-1" href="##">
                 Readmore
               </a>
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
@@ -215,16 +215,12 @@ const BlogSingle = async ({ params }: { params: Params }) => {
         {renderCommentForm()}
         {renderCommentLists()}
       </div>
-      <div className="relative bg-neutral-100 dark:bg-neutral-800 py-16 lg:py-28 mt-16 lg:mt-24">
+      {/* <div className="relative bg-neutral-100 dark:bg-neutral-800 py-16 lg:py-28 mt-16 lg:mt-24">
         <div className="container ">
           <h2 className="text-3xl font-semibold">Related posts</h2>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-            {/*  */}
-            {/* {[1, 1, 1, 1].filter((_, i) => i < 4).map(renderPostRelated)} */}
-            {/*  */}
-          </div>
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
