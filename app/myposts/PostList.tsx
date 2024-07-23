@@ -14,7 +14,7 @@ interface PostListProps {
 const PostList: React.FC<PostListProps> = ({ posts }) => {
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`${NEXT_ROUTE}/api/myPosts`, {
+      await axios.delete(`/api/myPosts`, {
         headers: { id: id },
       });
       toast.success("Post Deleted");
