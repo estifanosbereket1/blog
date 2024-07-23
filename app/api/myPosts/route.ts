@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 
 export const GET = async (request: Request) => {
   const userEmail = request.headers.get("userEmail");
-  console.log(userEmail);
+  // console.log(userEmail);
   try {
     const user = await getCurrentUser();
-    console.log(user);
+    // console.log(user);
     const allPost = await prisma.post.findMany({
       where: { userEmail: userEmail as string },
       include: { user: true },
@@ -16,7 +16,7 @@ export const GET = async (request: Request) => {
       ...post,
       createdAt: post.createdAt.toISOString().slice(0, 10), // Convert Date object to ISO string
     }));
-    console.log(formattedPosts);
+    // console.log(formattedPosts);
     return NextResponse.json(formattedPosts);
   } catch (error) {
     return NextResponse.error();

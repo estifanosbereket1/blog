@@ -55,7 +55,7 @@ const ClientLogin = () => {
     } catch (error) {
       setIsLoading(false);
       toast.error("Couldn't log in");
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -69,7 +69,7 @@ const ClientLogin = () => {
     } catch (error) {
       setIsLoading(false);
       toast.error(`Couldn't log in with ${method}`);
-      console.log(error);
+      // console.log(error);
     }
   };
 

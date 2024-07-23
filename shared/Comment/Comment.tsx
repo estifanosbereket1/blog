@@ -9,6 +9,7 @@ export interface CommentProps {
 }
 
 const Comment: FC<CommentProps> = async ({ isSmall, data }) => {
+  console.log(data);
   return (
     <div className="nc-CommentCard flex ">
       <div className="pt-1">
@@ -20,7 +21,7 @@ const Comment: FC<CommentProps> = async ({ isSmall, data }) => {
             className="flex-shrink-0 font-semibold text-neutral-800 dark:text-neutral-100"
             href="/ncmaz/author/the-demo-author-slug"
           >
-            {data?.user?.name}
+            {data?.userEmail}
           </a>
           <span className="mx-2">·</span>
           <span className="text-neutral-500 dark:text-neutral-400 text-xs line-clamp-1 sm:text-sm">

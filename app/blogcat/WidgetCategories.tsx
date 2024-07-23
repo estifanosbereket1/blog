@@ -22,7 +22,7 @@ const WidgetCategories: React.FC<WidgetCategoriesProps> = async ({
   try {
     const response = await axios.get(`${NEXT_ROUTE}/api/categories`);
     categories = response.data;
-    console.log(categories);
+    // console.log(categories);
   } catch (error) {
     console.error("Failed to fetch categories", error);
   }

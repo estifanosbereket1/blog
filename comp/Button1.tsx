@@ -25,7 +25,7 @@ const Button1: React.FC<ButtonProps> = ({ label, onClick, disabled }) => {
       //     : "py-3 text-sm font-semibold border-[2px]"
       // }
       // `}
-      className={`ttnc-ButtonPrimary disabled:bg-opacity-90 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 text-slate-50 dark:text-slate-800 shadow-xl my-2 mx-4 rounded-lg px-4 py-2 mb-7  `}
+      className={`ttnc-ButtonPrimary disabled:bg-opacity-70 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 text-slate-50 dark:text-slate-800 shadow-xl my-2 mx-4 rounded-lg px-4 py-2 mb-7  `}
     >
       {label}
     </button>

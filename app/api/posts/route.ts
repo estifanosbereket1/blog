@@ -108,7 +108,7 @@ export const POST = async (request: Request) => {
     // console.log(post, "posttttttttttttttttt");
     return NextResponse.json(post);
   } catch (error) {
-    console.log("error creating a post", error);
+    // console.log("error creating a post", error);
     return new NextResponse("Server error", { status: 500 });
   }
   //   const { catSlug, imageSrc, description, title } = body;

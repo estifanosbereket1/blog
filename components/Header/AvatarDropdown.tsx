@@ -17,7 +17,7 @@ interface AvatarDropDownProps {
 }
 
 const AvatarDropdown: React.FC<AvatarDropDownProps> = ({ user }) => {
-  console.log(user?.image);
+  // console.log(user?.image);
   return (
     <div className="AvatarDropdown ">
       <Popover className="relative">

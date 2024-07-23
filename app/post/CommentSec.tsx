@@ -6,6 +6,7 @@ import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
 import Textarea from "@/shared/Textarea/Textarea";
 import axios from "axios";
+import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -59,7 +60,7 @@ const CommentSec: React.FC<CommentSecProps> = ({ user, slug }) => {
             <div className="mt-2 space-x-3">
               {/* <ButtonPrimary onClick={onSubmit}>Submit</ButtonPrimary> */}
               <ButtonWrapper
-                ActionLabel="Register"
+                ActionLabel="Comment"
                 onSubmit={handleSubmit(onSubmit)}
                 disabled={loading}
               />
@@ -67,7 +68,13 @@ const CommentSec: React.FC<CommentSecProps> = ({ user, slug }) => {
             </div>
           </form>
         ) : (
-          <div>please login to write comment</div>
+          <div className="mt-2">
+            please{" "}
+            <span className="font-bold">
+              <a href="/login">Login</a>
+            </span>
+            to write comment
+          </div>
         )}
       </div>
     </div>

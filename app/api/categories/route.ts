@@ -6,7 +6,7 @@ export const GET = async () => {
     const categories = await prisma.category.findMany();
     return NextResponse.json(categories);
   } catch (error) {
-    console.error(error);
+    // console.error(error);
 
     // Return a JSON response with the error message and a status code
     return NextResponse.json(
