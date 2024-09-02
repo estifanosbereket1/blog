@@ -121,7 +121,7 @@ export const POST = async (request: Request) => {
       },
     });
 
-    console.log(comment, "ccccccccccccccccccc");
+    // console.log(comment, "ccccccccccccccccccc");
 
     return NextResponse.json(comment);
   } catch (error) {

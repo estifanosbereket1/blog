@@ -22,7 +22,7 @@ const page = async ({ searchParams }: { searchParams: { page?: string } }) => {
         </div>
 
         {/* === SECTION 1 === */}
-        <SectionAds />
+        {/* <SectionAds /> */}
 
         {/* === SECTION 8 === */}
         <SectionLatestPosts className="py-16 lg:py-28" page={page} />

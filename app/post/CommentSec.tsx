@@ -72,7 +72,7 @@ const CommentSec: React.FC<CommentSecProps> = ({ user, slug }) => {
             please{" "}
             <span className="font-bold">
               <a href="/login">Login</a>
-            </span>
+            </span>{" "}
             to write comment
           </div>
         )}

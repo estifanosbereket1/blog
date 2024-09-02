@@ -167,7 +167,7 @@ const BlogSingle = async ({ params }: { params: Params }) => {
         <Image
           alt="Related"
           fill
-          className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
+          className="object-cover w-[500px] h-[500px] transform group-hover:scale-105 transition-transform duration-300"
           src={_getImgRd()}
           sizes="400px"
         />
@@ -199,9 +199,9 @@ const BlogSingle = async ({ params }: { params: Params }) => {
       {singlePost.imageSrc && (
         <NcImage
           alt=""
-          width={1260}
-          height={750}
-          className="w-full rounded-xl"
+          width={1060}
+          height={50}
+          className="w-full h-[500px] rounded-xl"
           containerClassName="container my-10 sm:my-12 "
           src={singlePost?.imageSrc}
         />

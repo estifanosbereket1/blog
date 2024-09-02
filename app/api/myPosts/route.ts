@@ -25,7 +25,7 @@ export const GET = async (request: Request) => {
 
 export const DELETE = async (request: Request) => {
   const id = request.headers.get("id");
-  console.log(id);
+  // console.log(id);
   try {
     await prisma.post.delete({
       where: { id: id as string },
